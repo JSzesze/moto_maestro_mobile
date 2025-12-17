@@ -9,13 +9,16 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/images/splash-icon.png",
+      "image": "./assets/images/splashimage.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.jszesze.moto-maestro-mobile"
+      "bundleIdentifier": "com.jszesze.moto-maestro-mobile",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -23,7 +26,8 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.jszesze.motomaestromobile"
     },
     "web": {
       "bundler": "metro",
@@ -44,6 +48,12 @@
         "projectId": "fe7f6fde-957f-4317-909e-356b59627760"
       }
     },
-    "owner": "jszesze"
+    "owner": "jszesze",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/fe7f6fde-957f-4317-909e-356b59627760"
+    }
   }
 }

@@ -28,23 +28,24 @@ export function Input({
 }: InputProps) {
     const colorScheme = useColorScheme();
     const theme = Colors[colorScheme ?? 'light'];
+    const isDark = colorScheme === 'dark';
 
     return (
         <View style={[styles.container, style]}>
-            {label && <Text style={[styles.label, { color: theme.text }]}>{label}</Text>}
+            {label && <Text style={[styles.label, { color: isDark ? '#9ca3af' : theme.text }]}>{label}</Text>}
             <TextInput
                 style={[
                     styles.input,
                     {
-                        borderColor: error ? 'red' : theme.tabIconDefault,
-                        color: theme.text,
-                        backgroundColor: colorScheme === 'dark' ? '#333' : '#fff',
+                        borderColor: error ? '#ef4444' : isDark ? '#404040' : '#d1d5db',
+                        color: isDark ? '#ffffff' : theme.text,
+                        backgroundColor: isDark ? '#1a1a1a' : '#f9fafb',
                     }
                 ]}
                 value={value}
                 onChangeText={onChangeText}
                 placeholder={placeholder}
-                placeholderTextColor="#999"
+                placeholderTextColor={isDark ? '#6b7280' : '#9ca3af'}
                 secureTextEntry={secureTextEntry}
                 keyboardType={keyboardType}
                 autoCapitalize={autoCapitalize}
@@ -60,19 +61,20 @@ const styles = StyleSheet.create({
     },
     label: {
         fontSize: 14,
-        fontWeight: '500',
+        fontWeight: '600',
         marginBottom: 8,
     },
     input: {
-        height: 48,
-        borderWidth: 1,
-        borderRadius: 8,
+        height: 52,
+        borderWidth: 1.5,
+        borderRadius: 12,
         paddingHorizontal: 16,
         fontSize: 16,
     },
     errorText: {
-        color: 'red',
+        color: '#ef4444',
         fontSize: 12,
-        marginTop: 4,
+        marginTop: 6,
     },
 });
+

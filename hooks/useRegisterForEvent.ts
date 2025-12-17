@@ -21,7 +21,7 @@ export function useRegisterForEvent() {
                 .insert({
                     event_id: eventId,
                     class_id: classId,
-                    profile_id: profileId,
+                    profile: profileId,
                     driver_name: driverName,
                     driver_email: driverEmail,
                     kart_number: kartNumber,
